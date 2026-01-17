@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SG 4D Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      max-width: 420px;
+      margin: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+    .prize {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .num {
+      background: #eee;
+      padding: 6px;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .updated {
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>SG 4D Results</h1>
+
+  <div class="prize">1st Prize</div>
+  <div class="num" id="first"></div>
+
+  <div class="prize">2nd Prize</div>
+  <div class="num" id="second"></div>
+
+  <div class="prize">3rd Prize</div>
+  <div class="num" id="third"></div>
+
+  <div class="prize">Starter</div>
+  <div class="numbers" id="starter"></div>
+
+  <div class="prize">Consolation</div>
+  <div class="numbers" id="consolation"></div>
+
+  <div class="updated" id="updated"></div>
+</div>
+
+<script>
+  const data = {
+    date: "15 Jan 2026",
+    first: "1234",
+    second: "5678",
+    third: "9012",
+    starter: ["1111","2222","3333","4444","5555","6666","7777","8888","9999","0000"],
+    consolation: ["1122","2233","3344","4455","5566","6677","7788","8899","9900","1010"],
+    updated: "Updated at 10:15 PM"
+  };
+
+  document.getElementById("first").textContent = data.first;
+  document.getElementById("second").textContent = data.second;
+  document.getElementById("third").textContent = data.third;
+  document.getElementById("updated").textContent = data.updated;
+
+  data.starter.forEach(n => {
+    const div = document.createElement("div");
+    div.className = "num";
+    div.textContent = n;
+    document.getElementById("starter").appendChild(div);
+  });
+
+  data.consolation.forEach(n => {
+    const div = document.createElement("div");
+    div.className = "num";
+    div.textContent = n;
+    document.getElementById("consolation").appendChild(div);
+  });
+</script>
+
+</body>
+</html>
