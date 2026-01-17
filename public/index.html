@@ -2,105 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SG 4D Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singapore 4D Results</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f5f7fa;
       margin: 0;
-      padding: 16px;
+      padding: 0;
     }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      max-width: 420px;
-      margin: auto;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
+
     h1 {
       text-align: center;
-      margin-top: 0;
+      margin-bottom: 10px;
     }
-    .prize {
-      font-weight: bold;
-      margin-top: 12px;
-    }
-    .numbers {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .num {
-      background: #eee;
-      padding: 6px;
-      text-align: center;
-      border-radius: 4px;
-    }
-    .updated {
+
+    .date {
       text-align: center;
       color: #666;
+      margin-bottom: 20px;
+    }
+
+    .prize {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .first { background: #fff3cd; }
+    .second { background: #e2e3e5; }
+    .third { background: #f8d7da; }
+
+    .label {
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
       font-size: 12px;
-      margin-top: 12px;
+      color: #999;
     }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <h1>SG 4D Results</h1>
+  <div class="container">
+    <h1>🇸🇬 Singapore 4D Results</h1>
+    <div class="date">Draw Date: 18 Jan 2026</div>
 
-  <div class="prize">1st Prize</div>
-  <div class="num" id="first"></div>
+    <div class="prize first">
+      <span class="label">1st Prize</span>
+      <span>1234</span>
+    </div>
 
-  <div class="prize">2nd Prize</div>
-  <div class="num" id="second"></div>
+    <div class="prize second">
+      <span class="label">2nd Prize</span>
+      <span>5678</span>
+    </div>
 
-  <div class="prize">3rd Prize</div>
-  <div class="num" id="third"></div>
+    <div class="prize third">
+      <span class="label">3rd Prize</span>
+      <span>9012</span>
+    </div>
 
-  <div class="prize">Starter</div>
-  <div class="numbers" id="starter"></div>
-
-  <div class="prize">Consolation</div>
-  <div class="numbers" id="consolation"></div>
-
-  <div class="updated" id="updated"></div>
-</div>
-
-<script>
-  const data = {
-    date: "15 Jan 2026",
-    first: "1234",
-    second: "5678",
-    third: "9012",
-    starter: ["1111","2222","3333","4444","5555","6666","7777","8888","9999","0000"],
-    consolation: ["1122","2233","3344","4455","5566","6677","7788","8899","9900","1010"],
-    updated: "Updated at 10:15 PM"
-  };
-
-  document.getElementById("first").textContent = data.first;
-  document.getElementById("second").textContent = data.second;
-  document.getElementById("third").textContent = data.third;
-  document.getElementById("updated").textContent = data.updated;
-
-  data.starter.forEach(n => {
-    const div = document.createElement("div");
-    div.className = "num";
-    div.textContent = n;
-    document.getElementById("starter").appendChild(div);
-  });
-
-  data.consolation.forEach(n => {
-    const div = document.createElement("div");
-    div.className = "num";
-    div.textContent = n;
-    document.getElementById("consolation").appendChild(div);
-  });
-</script>
+    <footer>
+      Results for reference only
+    </footer>
+  </div>
 
 </body>
 </html>
-<!-- redeploy -->
